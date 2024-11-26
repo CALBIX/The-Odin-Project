@@ -11,10 +11,34 @@ function getComputerChoice() {
     } else if (randomNumber <= 0.66 && randomNumber >= 0.33) {
         computerChoiceAssignment = ("Paper")
     } else computerChoiceAssignment = ("Scissors")
-    return console.log(computerChoiceAssignment.toLowerCase())
+    console.log(computerChoiceAssignment)
+    return computerChoiceAssignment.toLowerCase()
 }
 
 function getHumanChoice() {
     let humanChoiceAssignment = prompt("Rock, Paper, or Scissors?")
-    return console.log(humanChoiceAssignment.toLowerCase())
+    console.log(humanChoiceAssignment)
+    return humanChoiceAssignment.toLowerCase()
 }
+
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+        console.log("Tie!")
+    } else if (humanChoice === 'rock' && computerChoice === 'scissors' ||
+        humanChoice === 'scissors' && computerChoice === 'paper' ||
+        humanChoice === 'paper' && computerChoice === 'rock'
+    ) {
+        humanScore++;
+        console.log("Winner!")
+    } else if (humanChoice === 'scissors' && computerChoice === 'rock' ||
+        humanChoice === 'paper' && computerChoice === 'scissors' ||
+        humanChoice === 'rock' && computerChoice === 'paper') {
+        computerScore++
+        console.log("You Loose!")
+    }
+}
+
+const humanSelection = getHumanChoice()
+const computerSelection = getComputerChoice()
+
+playRound(humanSelection, computerSelection)
