@@ -1,8 +1,3 @@
-//Create a variable to store humans score
-var humanScore = 0;
-//Create a variable to store computer score
-var computerScore = 0;
-
 function getComputerChoice() {
     let randomNumber = Math.random()
     let computerChoiceAssignment = "";
@@ -21,24 +16,38 @@ function getHumanChoice() {
     return humanChoiceAssignment.toLowerCase()
 }
 
-function playRound(humanChoice, computerChoice) {
-    if (humanChoice === computerChoice) {
-        console.log("Tie!")
-    } else if (humanChoice === 'rock' && computerChoice === 'scissors' ||
-        humanChoice === 'scissors' && computerChoice === 'paper' ||
-        humanChoice === 'paper' && computerChoice === 'rock'
-    ) {
-        humanScore++;
-        console.log("Winner!")
-    } else if (humanChoice === 'scissors' && computerChoice === 'rock' ||
-        humanChoice === 'paper' && computerChoice === 'scissors' ||
-        humanChoice === 'rock' && computerChoice === 'paper') {
-        computerScore++
-        console.log("You Loose!")
-    }
+function playGame() {
+
+    //Create a variable to store humans score
+    let humanScore = 0;
+    //Create a variable to store computer score
+    let computerScore = 0;
+
+    let i = 0;
+
+    function playRound(humanChoice, computerChoice) {
+        for (i = 0; i < 5; i++) {
+            console.log(i)
+            humanChoice = getHumanChoice()
+            computerChoice = getComputerChoice()
+
+            if (humanChoice === computerChoice) {
+                console.log("Tie!")
+            } else if (humanChoice === 'rock' && computerChoice === 'scissors' ||
+                humanChoice === 'scissors' && computerChoice === 'paper' ||
+                humanChoice === 'paper' && computerChoice === 'rock'
+            ) {
+                humanScore++;
+                console.log('humanScore:', humanScore)
+            } else if (humanChoice === 'scissors' && computerChoice === 'rock' ||
+                humanChoice === 'paper' && computerChoice === 'scissors' ||
+                humanChoice === 'rock' && computerChoice === 'paper') {
+                computerScore++
+                console.log('computerScore:', computerScore)
+            }
+
+        }
+    } return playRound()
 }
 
-const humanSelection = getHumanChoice()
-const computerSelection = getComputerChoice()
-
-playRound(humanSelection, computerSelection)
+playGame()
