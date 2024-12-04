@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     let randomNumber = Math.random()
     let computerChoiceAssignment = "";
@@ -17,12 +20,6 @@ function getHumanChoice() {
 }
 
 function playGame() {
-
-    //Create a variable to store humans score
-    let humanScore = 0;
-    //Create a variable to store computer score
-    let computerScore = 0;
-
     let i = 0;
 
     function playRound(humanChoice, computerChoice) {
@@ -48,6 +45,18 @@ function playGame() {
 
         }
     } return playRound()
-}
 
+}
 playGame()
+
+
+function scoreChecker() {
+    if (humanScore === computerScore) {
+        console.log("Tie!, Refresh to play again!")
+    } else if (humanScore > computerScore) {
+        console.log("You Win!, Refresh to play again!")
+    } else if (humanScore < computerScore) {
+        console.log("You Loose!, Refresh to play again!")
+    }
+}
+scoreChecker()
