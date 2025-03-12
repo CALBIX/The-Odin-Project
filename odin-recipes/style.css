@@ -1,0 +1,28 @@
+.title {
+  text-align: center;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+}
+
+.main-recipe-container {
+  display: inline-block;
+  padding: 40px;
+}
+
+.img-title {
+  text-align: center;
+  padding: 12px;
+  margin: auto;
+  border-radius: 24px 24px 0px 0px;
+  background-color: rgb(255, 165, 0);
+}
+
+.recipe-img {
+  width: 455px;
+  height: 400px;
+  border-radius: 0px 0px 24px 24px;
+  object-fit: cover;
+}
