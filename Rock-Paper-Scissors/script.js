@@ -20,10 +20,9 @@ function getHumanChoice() {
 }
 
 function playGame() {
-    let i = 0;
 
     function playRound(humanChoice, computerChoice) {
-        for (i = 0; i < 5; i++) {
+        for (let i = 0; i < 5; i++) {
             console.log(i)
             humanChoice = getHumanChoice()
             computerChoice = getComputerChoice()
